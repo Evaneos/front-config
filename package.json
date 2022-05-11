@@ -1,0 +1,28 @@
+{
+  "name": "@evaneos/eslint-config",
+  "version": "0.0.1",
+  "description": "This package provides Evaneos's configs for front projects.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo 'Not today'"
+  },
+  "author": "Evaneos <dev@evaneos.com>",
+  "repository": "git@github.com:evaneos/front-config.git",
+  "license": "ISC",
+  "peerDependencies": {
+    "@babel/core": "^7.2.0",
+    "@babel/eslint-parser": "^7.12.13",
+    "eslint": "^8.15.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.5.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.0",
+    "@babel/eslint-parser": "^7.12.13",
+    "eslint": "^8.15.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.5.0"
+  }
+}
