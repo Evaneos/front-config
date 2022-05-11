@@ -1,15 +1,17 @@
 module.exports = {
-    parser: '@babel/eslint-parser',
-    plugins: ['import'],
-    env: {
-        browser: true,
-        es6: true,
-    },
+    parser: '@typescript-eslint/parser',
+    plugins: ['@typescript-eslint'],
     extends: [
-        'eslint:recommended',
-        require.resolve('./rules/override'),
-        require.resolve('./rules/react'),
-        require.resolve('./rules/style'),
-        require.resolve('./rules/prettier'),
+        '@evaneos/eslint-config-base',
+        'plugin:@typescript-eslint/recommended',
+        'plugin:import/typescript',
+        '@evaneos/eslint-config-base/prettier',
     ],
+    settings: {
+        'import/extensions': ['.js', '.jsx', '.css', '.ts', '.tsx'],
+    },
+    rules: {
+        '@typescript-eslint/ban-ts-comment': 0,
+        '@typescript-eslint/camelcase': 0,
+    },
 };

@@ -1,16 +1,14 @@
-# ESLint (and Prettier) config
+# ESLint (and Prettier, and tsconfig) config
 
 This package provides Evaneos's configs for front projects.
 
--   [x] .eslintrc as an extensible shared config.
--   [x] .prettierrc
--   [ ] .tsconfig
-
-These are settings for ESLint and Prettier used by @evaneos.
+-   `.eslintrc` as an extensible shared config
+-   `.prettierrc` as an importable/extensible file
+-   `.tsconfig` as an extensible shared config
 
 ## What it does
 
-This setup lints and formats your JavaScript code based on evaneos practices. Feel free to override the rules that make sense for you.
+This setup lints, and formats, and configures your TypeScript code based on Evaneos practices. Feel free to override the rules that make sense for you.
 
 ## Installing
 
@@ -21,22 +19,22 @@ This setup lints and formats your JavaScript code based on evaneos practices. Fe
     npx install-peerdeps --dev @evaneos/eslint-config
     ```
 
-2.  You will see several dependencies were installed. Now, create (or update) a `.eslintrc` file with the following content:
+    You will see several dependencies were installed.
 
-    ```
+2.  Now, create (or update) a `.eslintrc` file with the following content:
+
+    ```json
     {
-       "extends": [
-          "@evaneos"
-       ]
+        "extends": ["@evaneos/eslint-config"]
     }
     ```
 
-    **If you extend anything else, always end up as following:**
+    **If you need to extend the configuration with other plugins, make sure that `@evaneos/eslint-config/prettier` is the last item of the array**
 
-    ```
+    ```json
     {
        "extends": [
-          "@evaneos",
+          "@evaneos/eslint-config",
           ...,
           "@evaneos/eslint-config/prettier",
        ]
@@ -45,9 +43,9 @@ This setup lints and formats your JavaScript code based on evaneos practices. Fe
 
 3.  Add prettier config to your `package.json`
 
-    ```
+    ```json
     {
-       "prettier": "@evaneos/eslint-config/.prettierrc.json"
+        "prettier": "@evaneos/eslint-config/.prettierrc.js"
     }
     ```
 
@@ -55,16 +53,19 @@ This setup lints and formats your JavaScript code based on evaneos practices. Fe
 
     ```js
     module.exports = {
-        ...require('@evaneos/eslint-config/.prettierrc.json'),
+        ...require('@evaneos/eslint-config/.prettierrc.js'),
         semi: false,
     };
     ```
 
-<!-- 4. Copy the .tsconfig file from this repository into your project folder -->
+4.  Create (or update) a `.tsconfig` file with the following content:
 
----
+    ```json
+    {
+        "extends": "@evaneos/eslint-config/tsconfig.json",
+        "compilerOptions": {},
+        "include": ["./src"]
+    }
+    ```
 
-## To do:
-
--   [ ] lower peerDependencies' package's versions ?
--   [ ] jsx-a11y ?
+    You can also set/override any `compilerOptions` you want, as well as change the `include` or any other entry.
