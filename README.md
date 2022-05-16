@@ -8,7 +8,7 @@ This package provides Evaneos's configs for front projects.
 
 ## What it does
 
-This setup lints, and formats, and configures your TypeScript code based on Evaneos practices. Feel free to override the rules that make sense for you.
+This setup lints, and formats, and configures your TypeScript code based on Evaneos' practices. Feel free to override the rules that make sense for you.
 
 ## Installing
 
