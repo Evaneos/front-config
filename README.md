@@ -1,71 +1,16 @@
-# ESLint (and Prettier, and tsconfig) config
+# Monorepo for Evaneos's front configs
 
-This package provides Evaneos's configs for front projects.
+This monorepo provides 2 packages as Evaneos's configs for front projects.
 
--   `.eslintrc` as an extensible shared config
--   `.prettierrc` as an importable/extensible file
--   `.tsconfig` as an extensible shared config
+- [`eslint-config`](packages/eslint-config) for TypeScript projects
+- [`eslint-config-base`](packages/eslint-config-base) for JavaScript projects
 
-## What it does
+## What they do
 
-This setup lints, and formats, and configures your TypeScript code based on Evaneos' practices. Feel free to override the rules that make sense for you.
+They setup lints, and formats, and configures your TypeScript/JavaScript code based on Evaneos' practices. Feel free to override the rules that make sense for you.
 
 ## Installing
 
-1.  In your project folder, run:
-
-    ```bash
-    npm i -D @evaneos/eslint-config
-    npx install-peerdeps --dev @evaneos/eslint-config
-    ```
-
-    You will see several dependencies were installed.
-
-2.  Now, create (or update) a `.eslintrc` file with the following content:
-
-    ```json
-    {
-        "extends": ["@evaneos/eslint-config"]
-    }
-    ```
-
-    **If you need to extend the configuration with other plugins, make sure that `@evaneos/eslint-config/prettier` is the last item of the array**
-
-    ```json
-    {
-       "extends": [
-          "@evaneos/eslint-config",
-          ...,
-          "@evaneos/eslint-config/prettier",
-       ]
-    }
-    ```
-
-3.  Add prettier config to your `package.json`
-
-    ```json
-    {
-        "prettier": "@evaneos/eslint-config/.prettierrc.js"
-    }
-    ```
-
-    If you want to override it, you'll have to spread the config into a `.prettierrc.js` file instead, eg:
-
-    ```js
-    module.exports = {
-        ...require('@evaneos/eslint-config/.prettierrc.js'),
-        semi: false,
-    };
-    ```
-
-4.  Create (or update) a `.tsconfig` file with the following content:
-
-    ```json
-    {
-        "extends": "@evaneos/eslint-config/tsconfig.json",
-        "compilerOptions": {},
-        "include": ["./src"]
-    }
-    ```
-
-    You can also set/override any `compilerOptions` you want, as well as change the `include` or any other entry.
+Please check either package for detailed README files:
+- [How to install `eslint-config`](packages/eslint-config/README.md#installing)
+- [How to install `eslint-config-base`](packages/eslint-config-base/README.md#installing)

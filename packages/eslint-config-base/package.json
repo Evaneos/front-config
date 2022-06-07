@@ -1,0 +1,39 @@
+{
+    "name": "@evaneos/eslint-config-base",
+    "version": "1.0.0-alpha.4",
+    "description": "This package provides Evaneos's configs for JavaScript projects.",
+    "author": "Evaneos <dev@evaneos.com>",
+    "homepage": "https://github.com/Evaneos/eslint-config-base#readme",
+    "license": "ISC",
+    "main": "eslint-config-base.js",
+    "publishConfig": {
+        "access": "public"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/Evaneos/eslint-config-base.git"
+    },
+    "bugs": {
+        "url": "https://github.com/Evaneos/eslint-config-base/issues"
+    },
+    "peerDependencies": {
+        "@babel/core": "^7.2.0",
+        "@babel/eslint-parser": "^7.12.13",
+        "eslint": "^8.15.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-import": "^2.26.0",
+        "eslint-plugin-react": "^7.29.4",
+        "eslint-plugin-react-hooks": "^4.5.0",
+        "prettier": "^2.6.2"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.2.0",
+        "@babel/eslint-parser": "^7.12.13",
+        "eslint": "^8.15.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-import": "^2.26.0",
+        "eslint-plugin-react": "^7.29.4",
+        "eslint-plugin-react-hooks": "^4.5.0",
+        "prettier": "^2.6.2"
+    }
+}
