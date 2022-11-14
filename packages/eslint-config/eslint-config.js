@@ -13,5 +13,6 @@ module.exports = {
     rules: {
         '@typescript-eslint/ban-ts-comment': 0,
         '@typescript-eslint/camelcase': 0,
+        '@typescript-eslint/no-floating-promises': 0,
     },
 };

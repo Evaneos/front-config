@@ -23,9 +23,14 @@ This setup lints, and formats, and configures your TypeScript code based on Evan
 
 2.  Now, create (or update) a `.eslintrc` file with the following content:
 
+    > Don't forget to adapt the `parserOptions.project` if it's different in your project.
+
     ```json
     {
-        "extends": ["@evaneos/eslint-config"]
+        "extends": ["@evaneos/eslint-config"],
+        "parserOptions": {
+            "project": ["./tsconfig.json"]
+        }
     }
     ```
 
@@ -37,7 +42,10 @@ This setup lints, and formats, and configures your TypeScript code based on Evan
           "@evaneos/eslint-config",
           ...,
           "@evaneos/eslint-config/prettier",
-       ]
+       ],
+        "parserOptions": {
+            "project": ["./tsconfig.json"]
+        }
     }
     ```
 
