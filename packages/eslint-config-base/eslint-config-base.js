@@ -10,5 +10,6 @@ module.exports = {
         require.resolve('./rules/react'),
         require.resolve('./rules/style'),
         require.resolve('./rules/prettier'),
+        require.resolve('./rules/test'),
     ],
 };
