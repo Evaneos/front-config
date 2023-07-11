@@ -12,6 +12,6 @@
     "release": "lerna publish"
   },
   "devDependencies": {
-    "lerna": "^6.6.1"
+    "lerna": "^7.1.1"
   }
 }
