@@ -6,6 +6,9 @@
     "homepage": "https://github.com/Evaneos/eslint-config-base#readme",
     "license": "ISC",
     "main": "eslint-config-base.js",
+    "engines": {
+        "node": ">=v18"
+    },
     "publishConfig": {
         "access": "public"
     },
