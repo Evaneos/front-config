@@ -2,8 +2,8 @@
   "name": "front-config",
   "private": true,
   "engines": {
-    "node": ">=v14.15.5",
-    "npm": ">=8.5.0"
+    "node": ">=v18",
+    "npm": ">=9"
   },
   "workspaces": [
     "packages/*"
@@ -12,6 +12,6 @@
     "release": "lerna publish"
   },
   "devDependencies": {
-    "lerna": "^6.6.1"
+    "lerna": "^7.1.1"
   }
 }

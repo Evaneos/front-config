@@ -6,6 +6,9 @@
     "homepage": "https://github.com/Evaneos/eslint-config#readme",
     "license": "ISC",
     "main": "eslint-config.js",
+    "engines": {
+        "node": ">=v18"
+    },
     "publishConfig": {
         "access": "public"
     },
@@ -18,28 +21,28 @@
     },
     "peerDependencies": {
         "@evaneos/eslint-config-base": "*",
-        "@typescript-eslint/eslint-plugin": "^5.59.2",
-        "@typescript-eslint/parser": "^5.59.2",
+        "@typescript-eslint/eslint-plugin": "^6.0.0",
+        "@typescript-eslint/parser": "^6.0.0",
         "eslint": "^8.39.0",
         "eslint-config-prettier": "^8.8.0",
         "eslint-plugin-import": "^2.27.5",
         "eslint-plugin-react": "^7.32.2",
         "eslint-plugin-react-hooks": "^4.6.0",
         "eslint-plugin-testing-library": "^5.10.3",
-        "prettier": "^2.8.8",
+        "prettier": "^3.0.0",
         "typescript": "^5.0.4"
     },
     "devDependencies": {
         "@evaneos/eslint-config-base": "../eslint-config-base",
-        "@typescript-eslint/eslint-plugin": "^5.59.2",
-        "@typescript-eslint/parser": "^5.59.2",
-        "eslint": "^8.39.0",
+        "@typescript-eslint/eslint-plugin": "^6.0.0",
+        "@typescript-eslint/parser": "^6.0.0",
+        "eslint": "^8.44.0",
         "eslint-config-prettier": "^8.8.0",
         "eslint-plugin-import": "^2.27.5",
         "eslint-plugin-react": "^7.32.2",
         "eslint-plugin-react-hooks": "^4.6.0",
-        "eslint-plugin-testing-library": "^5.10.3",
-        "prettier": "^2.8.8",
-        "typescript": "^5.0.4"
+        "eslint-plugin-testing-library": "^5.11.0",
+        "prettier": "^3.0.0",
+        "typescript": "^5.1.6"
     }
 }
