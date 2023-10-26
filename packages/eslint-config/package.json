@@ -24,7 +24,7 @@
         "@typescript-eslint/eslint-plugin": "^6",
         "@typescript-eslint/parser": "^6",
         "eslint": "^8",
-        "eslint-config-prettier": "^8",
+        "eslint-config-prettier": "^8 || ^9",
         "eslint-plugin-import": "^2",
         "eslint-plugin-react": "^7",
         "eslint-plugin-react-hooks": "^4",
@@ -34,15 +34,15 @@
     },
     "devDependencies": {
         "@evaneos/eslint-config-base": "../eslint-config-base",
-        "@typescript-eslint/eslint-plugin": "^6.9.0",
-        "@typescript-eslint/parser": "^6.9.0",
-        "eslint": "^8.52.0",
+        "@typescript-eslint/eslint-plugin": "^6.12.0",
+        "@typescript-eslint/parser": "^6.12.0",
+        "eslint": "^8.54.0",
         "eslint-config-prettier": "^9.0.0",
         "eslint-plugin-import": "^2.29.0",
         "eslint-plugin-react": "^7.33.2",
         "eslint-plugin-react-hooks": "^4.6.0",
-        "eslint-plugin-testing-library": "^6.1.0",
-        "prettier": "^3.0.3",
-        "typescript": "^5.2.2"
+        "eslint-plugin-testing-library": "^6.2.0",
+        "prettier": "^3.1.0",
+        "typescript": "^5.3.2"
     }
 }
