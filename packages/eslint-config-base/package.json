@@ -20,25 +20,25 @@
         "url": "https://github.com/Evaneos/eslint-config-base/issues"
     },
     "peerDependencies": {
-        "@babel/core": "^7.21.8",
-        "@babel/eslint-parser": "^7.21.8",
-        "eslint": "^8.39.0",
-        "eslint-config-prettier": "^8.8.0",
-        "eslint-plugin-import": "^2.27.5",
-        "eslint-plugin-react": "^7.32.2",
-        "eslint-plugin-react-hooks": "^4.6.0",
-        "eslint-plugin-testing-library": "^5.10.3",
-        "prettier": "^3.0.0"
+        "@babel/core": "^7",
+        "@babel/eslint-parser": "^7",
+        "eslint": "^8",
+        "eslint-config-prettier": "^8",
+        "eslint-plugin-import": "^2",
+        "eslint-plugin-react": "^7",
+        "eslint-plugin-react-hooks": "^4",
+        "eslint-plugin-testing-library": "^5",
+        "prettier": "^3"
     },
     "devDependencies": {
-        "@babel/core": "^7.22.8",
-        "@babel/eslint-parser": "^7.22.7",
-        "eslint": "^8.44.0",
-        "eslint-config-prettier": "^8.8.0",
-        "eslint-plugin-import": "^2.27.5",
-        "eslint-plugin-react": "^7.32.2",
+        "@babel/core": "^7.23.2",
+        "@babel/eslint-parser": "^7.22.15",
+        "eslint": "^8.52.0",
+        "eslint-config-prettier": "^9.0.0",
+        "eslint-plugin-import": "^2.29.0",
+        "eslint-plugin-react": "^7.33.2",
         "eslint-plugin-react-hooks": "^4.6.0",
-        "eslint-plugin-testing-library": "^5.11.0",
-        "prettier": "^3.0.0"
+        "eslint-plugin-testing-library": "^6.1.0",
+        "prettier": "^3.0.3"
     }
 }
