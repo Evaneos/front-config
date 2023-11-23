@@ -36,11 +36,11 @@ This setup lints, and formats, and configures your TypeScript code based on Evan
 
     **If you need to extend the configuration with other plugins, make sure that `@evaneos/eslint-config/prettier` is the last item of the array**
 
-    ```json
+    ```json5
     {
        "extends": [
           "@evaneos/eslint-config",
-          ...,
+          // ...,
           "@evaneos/eslint-config/prettier",
        ],
         "parserOptions": {
