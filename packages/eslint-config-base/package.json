@@ -3,7 +3,7 @@
     "version": "4.1.2",
     "description": "This package provides Evaneos's configs for JavaScript projects.",
     "author": "Evaneos <dev@evaneos.com>",
-    "homepage": "https://github.com/Evaneos/eslint-config-base#readme",
+    "homepage": "https://github.com/Evaneos/front-config/packages/eslint-config-base#readme",
     "license": "ISC",
     "main": "eslint-config-base.js",
     "engines": {
@@ -14,10 +14,10 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+ssh://git@github.com/Evaneos/eslint-config-base.git"
+        "url": "git+ssh://git@github.com/Evaneos/front-config.git"
     },
     "bugs": {
-        "url": "https://github.com/Evaneos/eslint-config-base/issues"
+        "url": "https://github.com/Evaneos/front-config/issues"
     },
     "peerDependencies": {
         "@babel/core": "^7",
@@ -29,16 +29,5 @@
         "eslint-plugin-react-hooks": "^4",
         "eslint-plugin-testing-library": "^6",
         "prettier": "^3"
-    },
-    "devDependencies": {
-        "@babel/core": "^7.23.3",
-        "@babel/eslint-parser": "^7.23.3",
-        "eslint": "^8.54.0",
-        "eslint-config-prettier": "^9.0.0",
-        "eslint-plugin-import": "^2.29.0",
-        "eslint-plugin-react": "^7.33.2",
-        "eslint-plugin-react-hooks": "^4.6.0",
-        "eslint-plugin-testing-library": "^6.2.0",
-        "prettier": "^3.1.0"
     }
 }

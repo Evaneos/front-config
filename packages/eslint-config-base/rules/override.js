@@ -6,5 +6,6 @@ module.exports = {
         'prefer-const': 1,
         'prefer-destructuring': 1,
         'prefer-spread': 1,
+        'arrow-body-style': 0,
     },
 };

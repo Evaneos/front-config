@@ -9,7 +9,7 @@ module.exports = {
         require.resolve('./rules/override'),
         require.resolve('./rules/react'),
         require.resolve('./rules/style'),
-        require.resolve('./rules/prettier'),
         require.resolve('./rules/test'),
+        require.resolve('./rules/prettier'),
     ],
 };
