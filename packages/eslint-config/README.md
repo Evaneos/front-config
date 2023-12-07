@@ -4,11 +4,10 @@ This package provides Evaneos's configs for front projects.
 
 -   `.eslintrc` as an extensible shared config
 -   `.prettierrc` as an importable/extensible file
--   `.tsconfig` as an extensible shared config
 
 ## What it does
 
-This setup lints, and formats, and configures your TypeScript code based on Evaneos' practices. Feel free to override the rules that make sense for you.
+This setup lints, and formats based on Evaneos' practices. Feel free to override the rules that make sense for you.
 
 ## Installing
 
@@ -65,15 +64,3 @@ This setup lints, and formats, and configures your TypeScript code based on Evan
         semi: false,
     };
     ```
-
-4.  Create (or update) a `.tsconfig` file with the following content:
-
-    ```json
-    {
-        "extends": "@evaneos/eslint-config/tsconfig.json",
-        "compilerOptions": {},
-        "include": ["./src"]
-    }
-    ```
-
-    You can also set/override any `compilerOptions` you want, as well as change the `include` or any other entry.

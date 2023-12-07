@@ -4,6 +4,7 @@ This monorepo provides 2 packages as Evaneos's configs for front projects.
 
 - [`eslint-config`](packages/eslint-config) for TypeScript projects
 - [`eslint-config-base`](packages/eslint-config-base) for JavaScript projects
+- [`typescript-config`](packages/typescript-config) for TypeScript projects' tsconfig.json file
 
 ## What they do
 
@@ -14,6 +15,7 @@ They set up lints, and formats, and configures your TypeScript/JavaScript code b
 Please check either package for detailed README files:
 - [How to install `eslint-config`](packages/eslint-config/README.md#installing)
 - [How to install `eslint-config-base`](packages/eslint-config-base/README.md#installing)
+- [How to install `typescript-config`](packages/typescript-config/README.md#installing)
 
 ## How this works
 
@@ -45,9 +47,14 @@ We chose to override those :
 - singleQuote: true  
   We think doubleQuote might be (just a bit) better, but it would generate a lot of changes, so not worth it.
 
+What's important is for every project to have prettier enabled. It doesn't really matter if some projects have little changes over it (eg: printWidth being defaulted to 80);
+
+About printWidth :
+> It is not the hard upper allowed line length limit. It is a way to say to Prettier roughly how long you’d like lines to be. Prettier will make both shorter and longer lines, but generally strive to meet the specified printWidth.
+
 ### TSconfig
 
-[tsconfig.json](packages/eslint-config/tsconfig.json) is mandatory for a TypeScript project to work.  
+[tsconfig.json](packages/typescript-config/tsconfig.json) is mandatory for a TypeScript project to work.  
 Some of its config is project specific, but we can share most ot the `compilerOptions` configs, and so we chose to override some of the defaults :
 
 `compilerOptions.target` is set to `es6` because TSC transpiles poorly to ES5,
@@ -83,8 +90,26 @@ module.exports = {
 };
 ```
 
-### Questions / To Discuss
+### Questions / To Discuss in front chapter
 
 #### Eslint
 
 - `arrow-body-style` rule: do we want to force it or not?
+  - inline
+    - pour debugger soit réécrire les accolade et le return
+    - le return est implicite et lors d'un refacto, on ne sait pas facilement quelle était l'intention de la fonction
+
+off la rend flexible
+always autofix avec eslint --fix
+
+```typescript
+const toto = () => {
+  return 'tata';
+}
+
+const totso = (param): 'toto' => 'tata';
+```
+
+## Notes
+
+We did not settup a default babel configuration because we found it too complex to harmonize between apps (b2b / b2c / next defaults). For now, just look up for existing projects to configure new ones.

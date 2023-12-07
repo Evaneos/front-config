@@ -3,7 +3,7 @@
     "version": "4.1.3",
     "description": "This package provides Evaneos's configs for TypesScript projects.",
     "author": "Evaneos <dev@evaneos.com>",
-    "homepage": "https://github.com/Evaneos/eslint-config#readme",
+    "homepage": "https://github.com/Evaneos/front-config/packages/eslint-config#readme",
     "license": "ISC",
     "main": "eslint-config.js",
     "engines": {
@@ -14,10 +14,10 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+ssh://git@github.com/Evaneos/eslint-config.git"
+        "url": "git+ssh://git@github.com/Evaneos/front-config.git"
     },
     "bugs": {
-        "url": "https://github.com/Evaneos/eslint-config/issues"
+        "url": "https://github.com/Evaneos/front-config/issues",
     },
     "peerDependencies": {
         "@evaneos/eslint-config-base": "*",
