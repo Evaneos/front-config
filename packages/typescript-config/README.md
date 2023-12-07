@@ -1,6 +1,6 @@
 # tsconfig
 
-This package provides Evaneos's configs for typescript front projects.
+This package provides Evaneos's tsconfig for typescript front projects.
 
 -   `.tsconfig` as an extensible shared config
 
@@ -14,7 +14,7 @@ This setup configures your TypeScript code based on Evaneos' practices. Feel fre
 
     ```bash
     npm i @evaneos/typescript-config
-    npx install-peerdeps --dev @evaneos/typescript-config
+    npx install-peerdeps @evaneos/typescript-config
     ```
 
     You will see several dependencies were installed.
@@ -23,7 +23,7 @@ This setup configures your TypeScript code based on Evaneos' practices. Feel fre
 
     ```json
     {
-        "extends": "@evaneos/eslint-config/tsconfig.json",
+        "extends": "@evaneos/typescript-config/tsconfig.json",
         "compilerOptions": {},
         "include": ["./src"]
     }

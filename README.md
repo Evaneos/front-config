@@ -8,7 +8,7 @@ This monorepo provides 2 packages as Evaneos's configs for front projects.
 
 ## What they do
 
-They set up lints, and formats, and configures your TypeScript/JavaScript code based on Evaneos' practices. Feel free to override the rules that make sense for you.
+They setup lints, and formats, and configures your TypeScript/JavaScript code based on Evaneos' practices. Feel free to override the rules that make sense for you.
 
 ## Installing
 
@@ -45,7 +45,7 @@ We chose to override those :
 - tabWidth: 4  
   Makes the code easier to read
 - singleQuote: true  
-  We think doubleQuote might be (just a bit) better, but it would generate a lot of changes, so not worth it.
+  We think doubleQuote might be (just a bit) better, but it would generate a lot of changes, so it would not be worth it.
 
 What's important is for every project to have prettier enabled. It doesn't really matter if some projects have little changes over it (eg: printWidth being defaulted to 80);
 
