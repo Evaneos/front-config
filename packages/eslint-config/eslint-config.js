@@ -8,11 +8,12 @@ module.exports = {
         '@evaneos/eslint-config-base/prettier',
     ],
     settings: {
-        'import/extensions': ['.js', '.jsx', '.css', '.ts', '.tsx'],
+        'import/extensions': [ '.js', '.jsx', '.css', '.ts', '.tsx' ],
     },
     rules: {
         '@typescript-eslint/ban-ts-comment': 0,
         '@typescript-eslint/camelcase': 0,
-        '@typescript-eslint/no-floating-promises': "error",
+        '@typescript-eslint/no-floating-promises': 'error',
+        '@typescript-eslint/no-unused-vars': [ 'error', { 'ignoreRestSiblings': true } ],
     },
 };
