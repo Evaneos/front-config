@@ -15,5 +15,6 @@ module.exports = {
         '@typescript-eslint/camelcase': 0,
         '@typescript-eslint/no-floating-promises': 'error',
         '@typescript-eslint/no-unused-vars': [ 'error', { 'ignoreRestSiblings': true } ],
+        '@typescript-eslint/array-type': [ 'error', { 'default': 'generic' } ]
     },
 };
