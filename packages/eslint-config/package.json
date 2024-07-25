@@ -1,6 +1,6 @@
 {
     "name": "@evaneos/eslint-config",
-    "version": "4.3.0",
+    "version": "4.5.0",
     "description": "This package provides Evaneos's configs for TypesScript projects.",
     "author": "Evaneos <dev@evaneos.com>",
     "homepage": "https://github.com/Evaneos/front-config/packages/eslint-config#readme",
