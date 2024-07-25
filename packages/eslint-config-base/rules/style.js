@@ -8,7 +8,7 @@ module.exports = {
                     order: 'asc',
                     caseInsensitive: true,
                 },
-                'newlines-between': 'always-and-inside-groups',
+                'newlines-between': 'always',
             },
         ],
     },
