@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.5.2](https://github.com/Evaneos/front-config/compare/v4.5.1...v4.5.2) (2024-08-08)
+
+
+### Bug Fixes
+
+* package-lock properties ordering ([#44](https://github.com/Evaneos/front-config/issues/44)) ([ac26853](https://github.com/Evaneos/front-config/commit/ac268537c4c320c1c0895511b3a2e87e22980596))
+
 ## [4.5.1](https://github.com/Evaneos/front-config/compare/v4.5.0...v4.5.1) (2024-08-08)
 
 
