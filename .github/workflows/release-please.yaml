@@ -1,31 +1,48 @@
 on:
-    push:
-        branches: [main]
+  push:
+    branches: [main]
 
 permissions:
-    contents: write
-    pull-requests: write
+  contents: write
+  pull-requests: write
 
 name: release-please
 
 jobs:
-    release-please:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: google-github-actions/release-please-action@v4
-              id: release
-              with:
-                  release-type: node
-            - uses: actions/checkout@v4
-              if: ${{ steps.release.outputs.release_created }}
-            - uses: actions/setup-node@v4
-              with:
-                  node-version: 20
-                  registry-url: 'https://registry.npmjs.org'
-              if: ${{ steps.release.outputs.release_created }}
-            - run: npm install
-              if: ${{ steps.release.outputs.release_created }}
-            - run: lerna publish from-package --yes
-              env:
-                  NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-              if: ${{ steps.release.outputs.release_created }}
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: google-github-actions/release-please-action@v4
+        id: release
+        with:
+          release-type: node
+      - name: Extract PR Branch Name
+        if: ${{ steps.release.outputs.prs_created }}
+        run: |
+          echo "PR_BRANCH=$(jq -r '.headBranchName' <<< '${{ steps.release.outputs.pr }}')"
+          git fetch origin $PR_BRANCH
+          git checkout $PR_BRANCH
+
+      - name: Update versions with lerna
+        run: lerna version  ${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}.${{ steps.release.outputs.patch }} --force-publish --yes
+      - name: Push changes to PR branch
+        run: |
+          git config --global user.email "evaneos-dev-bot@evaneos.com"
+          git config --global user.name "evaneos-dev[bot]"
+          git add .
+          git commit -m "chore(release): update versions with lerna"
+          git push origin HEAD
+
+      - uses: actions/checkout@v4
+        if: ${{ steps.release.outputs.release_created }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: "https://registry.npmjs.org"
+        if: ${{ steps.release.outputs.release_created }}
+      - run: npm install
+        if: ${{ steps.release.outputs.release_created }}
+      - run: lerna publish from-package --yes
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+        if: ${{ steps.release.outputs.release_created }}
