@@ -1,6 +1,6 @@
 {
   "name": "@evaneos/typescript-config",
-  "version": "4.5.4",
+  "version": "4.5.5",
   "description": "This package provides Evaneos's tsconfig for TypesScript projects.",
   "author": "Evaneos <dev@evaneos.com>",
   "homepage": "https://github.com/Evaneos/typescript-config#readme",

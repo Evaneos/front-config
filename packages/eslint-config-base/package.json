@@ -1,6 +1,6 @@
 {
     "name": "@evaneos/eslint-config-base",
-    "version": "4.5.4",
+    "version": "4.5.5",
     "description": "This package provides Evaneos's configs for JavaScript projects.",
     "author": "Evaneos <dev@evaneos.com>",
     "homepage": "https://github.com/Evaneos/front-config/packages/eslint-config-base#readme",
