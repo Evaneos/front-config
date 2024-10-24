@@ -1,23 +1,17 @@
 {
-  "name": "front-config",
-  "private": true,
+  "name": "@evaneos/front-config",
+  "version": "1.0.0",
   "engines": {
     "node": ">=v18",
     "npm": ">=9"
   },
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
-    "prepare": "husky",
-    "release": "lerna publish --force-publish"
+    "prepare": "husky"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.4.0",
     "@commitlint/config-conventional": "^19.2.2",
     "commitlint-plugin-function-rules": "^4.0.0",
-    "husky": "^9.1.4",
-    "lerna": "^7.4.1"
-  },
-  "version": "4.5.2"
+    "husky": "^9.1.4"
+  }
 }
