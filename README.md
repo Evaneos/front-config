@@ -10,17 +10,15 @@ npm install @evaneos/front-config@latest
 
 # Usage
 
-## Eslint
+## Eslint flat config
 
-In your `.eslintrc` file, add:
+In your `eslint.config.js` file, add:
 
 ```json
-{
-  "extends": ["@evaneos/front-config/linting/eslint-config"],
-  "parserOptions": {
-    "project": ["./tsconfig.json"]
-  }
-}
+const evaneosConfig = require("@evaneos/front-config/linting/eslint.config.js")
+module.export = [
+  ...evaneosConfig
+  ]
 ```
 
 ## TSConfig
@@ -40,6 +38,5 @@ In your `.prettierrc` file add:
 ```js
 module.exports = {
   ...require("@evaneos/front-config/linting/prettier-config.js"),
-  semi: false,
 };
 ```

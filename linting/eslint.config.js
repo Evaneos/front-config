@@ -8,7 +8,6 @@ const tseslint = require("typescript-eslint");
 const reactLint = require("./rules/react");
 const testLint = require("./rules/test");
 const evaneosOverrides = require("./rules/override");
-const evaneosStyle = require("./rules/style");
 
 module.exports = tseslint.config(
   eslint.configs.recommended,
@@ -17,15 +16,18 @@ module.exports = tseslint.config(
     languageOptions: {
       parserOptions: {
         projectService: true,
-        tsconfigRootDir: import.meta.dirname,
+        tsconfigRootDir: __dirname,
       },
     },
+  },
+  {
+    files: ["**/*.js"],
+    extends: [tseslint.configs.disableTypeChecked],
   },
   eslintConfigPrettier,
   testLint,
   // @ts-expect-error
   ...reactLint,
   // custom evaneos rules
-  ...evaneosOverrides,
-  evaneosStyle
+  ...evaneosOverrides
 );
