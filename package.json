@@ -18,5 +18,14 @@
     "@commitlint/config-conventional": "^19.2.2",
     "commitlint-plugin-function-rules": "^4.0.0",
     "husky": "^9.1.4"
+  },
+  "dependencies": {
+    "@eslint/js": "^9.17.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-react": "^7.37.3",
+    "eslint-plugin-testing-library": "^6.5.0",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.19.0"
   }
 }
