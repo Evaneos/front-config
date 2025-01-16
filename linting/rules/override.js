@@ -1,9 +1,5 @@
-const importPlugin = require("eslint-plugin-import");
-
 module.exports = [
   {
-    files: ["**/*.{ts,tsx}"],
-    extends: [importPlugin.flatConfigs.recommended],
     rules: {
       "import/no-default-export": 2,
       "import/newline-after-import": 1,
