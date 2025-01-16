@@ -1,6 +1,6 @@
 {
   "name": "@evaneos/front-config",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "engines": {
     "node": ">=v18",
     "npm": ">=9"
