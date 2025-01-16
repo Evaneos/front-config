@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/Evaneos/front-config/compare/v1.0.1...v1.0.2) (2025-01-16)
+
+
+### Bug Fixes
+
+* updated env token to retrigger npm publish ([d5ab911](https://github.com/Evaneos/front-config/commit/d5ab911ca06c222915d9203c16872d752fff8e4d))
+
 ## [1.0.1](https://github.com/Evaneos/front-config/compare/v1.0.0...v1.0.1) (2025-01-16)
 
 
