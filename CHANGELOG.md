@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/Evaneos/front-config/compare/v1.0.0...v1.0.1) (2025-01-16)
+
+
+### Bug Fixes
+
+* use npm publish, bye Lerna ([ead60f0](https://github.com/Evaneos/front-config/commit/ead60f025c26f05debf4cb41699d87fd1e30f3d3))
+
 ## [1.0.0](https://github.com/Evaneos/front-config/compare/v4.5.2...v1.0.0) (2025-01-16)
 
 
