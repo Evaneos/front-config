@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.0.0](https://github.com/Evaneos/front-config/compare/v4.5.2...v1.0.0) (2025-01-16)
+
+
+### Features
+
+* move to single package format ([bdcd6d3](https://github.com/Evaneos/front-config/commit/bdcd6d389042a867cac350462973ea02a1ba7877))
+* use flat config from eslint 9 ([9b1075d](https://github.com/Evaneos/front-config/commit/9b1075d153dcc0d7fad3492ba194a4338aa7e487))
+
+
+### Bug Fixes
+
+* update rules not  working rules ([863a03f](https://github.com/Evaneos/front-config/commit/863a03f31a26c3f38e966f913d0f869383f1fd0a))
+* update rules setup ([6c3a94c](https://github.com/Evaneos/front-config/commit/6c3a94ccc315c704fbd97387e4831dcca7baf7c2))
+
+
+### Miscellaneous Chores
+
+* release 1.0.0 ([dd955a7](https://github.com/Evaneos/front-config/commit/dd955a70493f52f9a3d584873da95a031e095af1))
+
 ## [4.5.2](https://github.com/Evaneos/front-config/compare/v4.5.1...v4.5.2) (2024-08-08)
 
 
