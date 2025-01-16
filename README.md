@@ -2,7 +2,7 @@
 
 @evaneos/front-config is the main resource for shared js/ts/tsx linting and config across Evaneos apps.
 
-## Instal
+## Install
 
 ```shell
 npm install @evaneos/front-config@latest
@@ -14,7 +14,7 @@ npm install @evaneos/front-config@latest
 
 In your `eslint.config.js` file, add:
 
-```json
+```js
 const evaneosConfig = require("@evaneos/front-config/linting/eslint.config.js")
 module.export = [
   ...evaneosConfig
