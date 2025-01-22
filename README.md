@@ -8,17 +8,20 @@
 npm install @evaneos/front-config@latest
 ```
 
-# Usage
+# Install
 
 ## Eslint flat config
 
-In your `eslint.config.js` file, add:
+In your `eslint.config.(c|m)js` file, add:
 
-```js
-const evaneosConfig = require("@evaneos/front-config/linting/eslint.config.js")
-module.export = [
-  ...evaneosConfig
-  ]
+```cjs
+const evaneosConfig = require("@evaneos/front-config/eslint/eslint.config.js");
+module.export = [...evaneosConfig];
+```
+
+```mjs
+import evaneosConfig from "@evaneos/front-config/eslint/eslint.config.mjs";
+export default [...evaneosConfig];
 ```
 
 ## TSConfig
@@ -33,10 +36,18 @@ In your `tsconfig.json` file, add:
 
 ## Prettier
 
-In your `.prettierrc` file add:
+In your `.prettierrc.js` file add:
 
 ```js
 module.exports = {
   ...require("@evaneos/front-config/linting/prettier-config.js"),
 };
 ```
+
+# Contribution
+
+Contributing to this repo should be simple.
+
+If you want to add a rule, plugin or anything, make a simple PR that does it, get it reviewed, merge it and then a release PR will automatically appear few minutes after.
+Make sure you follow standard commit.
+Merge it and it will automatically build and publish.

@@ -26,9 +26,7 @@ module.exports = {
             'always',
             (parsed) => {
                 const isValid = Boolean(parsed.type);
-                const message = `Type de commit requis, par exemple : ${commitTypes.join(
-                    ', '
-                )}`;
+                const message = `Type de commit requis, par exemple : ${commitTypes.join(', ')}`;
                 return [isValid, message];
             },
         ],

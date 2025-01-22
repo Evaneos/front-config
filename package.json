@@ -6,25 +6,34 @@
     "npm": ">=9"
   },
   "files": [
-    "linting/*",
+    "eslint/*",
     "config/*",
     "README.md"
   ],
   "scripts": {
-    "prepare": "husky"
+    "prepare": "husky",
+    "build": "tsup",
+    "lint": "eslint -c ./eslint.config.ts",
+    "prettier:check": "prettier --check linting/",
+    "prettier:fix": "prettier --write linting/"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.4.0",
     "@commitlint/config-conventional": "^19.2.2",
+    "@types/eslint-config-prettier": "^6.11.3",
     "commitlint-plugin-function-rules": "^4.0.0",
-    "husky": "^9.1.4"
+    "globals": "^15.14.0",
+    "husky": "^9.1.4",
+    "jiti": "^2.4.2",
+    "prettier": "3.4.2",
+    "tsup": "^8.3.5"
   },
   "dependencies": {
-    "@eslint/js": "^9.17.0",
+    "@eslint/js": "^9.18.0",
+    "eslint": "^9.18.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-react": "^7.37.3",
-    "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-testing-library": "^6.5.0",
     "typescript": "^5.7.2",
     "typescript-eslint": "^8.19.0"
