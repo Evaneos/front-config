@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.1.0](https://github.com/Evaneos/front-config/compare/v1.0.2...v1.1.0) (2025-01-30)
+
+
+### Features
+
+* add build check ([4cae164](https://github.com/Evaneos/front-config/commit/4cae164f6be8e8cd11c367d118f2faa106f24fca))
+* add ci checks ([983b652](https://github.com/Evaneos/front-config/commit/983b652a5842fb65cd63f1d51410774268d74339))
+* update config and fix build setup ([8075f65](https://github.com/Evaneos/front-config/commit/8075f6583aaae00c28d939a34df5da6d0cfb6380))
+* update readme ([703c4d2](https://github.com/Evaneos/front-config/commit/703c4d23962a721478bdd68a443f27f286b7d848))
+* update to ts and use tsup to build ([54e01e5](https://github.com/Evaneos/front-config/commit/54e01e55fef7938cfdd60542797e9a793418b08b))
+
+
+### Bug Fixes
+
+* ci update lint call ([90015c4](https://github.com/Evaneos/front-config/commit/90015c4d4c38f646f14f47ef92db9a431c55940e))
+* update gitignore ([c470a71](https://github.com/Evaneos/front-config/commit/c470a71896da1e42d74183d390fbaf9058309c51))
+
 ## [1.0.2](https://github.com/Evaneos/front-config/compare/v1.0.1...v1.0.2) (2025-01-16)
 
 
