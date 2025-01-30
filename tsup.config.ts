@@ -1,11 +1,11 @@
-import { defineConfig } from "tsup";
+import { defineConfig } from 'tsup';
 
 export default defineConfig({
-  entry: {
-    "eslint/index": "linting/eslint.config.ts",
-  },
-  format: ["esm", "cjs"],
-  splitting: false,
-  sourcemap: true,
-  outDir: "./",
+    entry: {
+        'eslint/index': 'src/eslint/eslint.config.ts',
+    },
+    format: ['esm', 'cjs'],
+    splitting: false,
+    sourcemap: false,
+    outDir: './',
 });
