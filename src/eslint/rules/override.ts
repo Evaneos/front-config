@@ -6,6 +6,13 @@ export default [
             'prefer-destructuring': 1,
             'prefer-spread': 1,
             'arrow-body-style': 0,
+            'react/display-name': 0,
+            'react/prop-types': 0,
+            'react/react-in-jsx-scope': 0,
+            'react/jsx-uses-react': 'error',
+            'react/jsx-uses-vars': 'error',
+            '@typescript-eslint/no-unsafe-member-access': 'off',
+            '@typescript-eslint/no-unsafe-assignment': 'off',
         },
     },
 ] as const;

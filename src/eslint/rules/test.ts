@@ -18,13 +18,5 @@ export default [
         languageOptions: {
             globals: pluginJest.environments.globals.globals,
         },
-        rules: {
-            'jest/no-disabled-tests': 'off',
-            'jest/no-focused-tests': 'off',
-            'jest/no-identical-title': 'error',
-            'jest/prefer-to-have-length': 'warn',
-            '@typescript-eslint/no-require-imports': 'off',
-            'jest/valid-expect': 'off',
-        },
     } as const,
 ];
