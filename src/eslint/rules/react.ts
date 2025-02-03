@@ -27,29 +27,16 @@ export default [
                 ...globals.browser,
             },
         },
-        rules: {
-            // ... any rules you want
-            'react/jsx-uses-react': 'error',
-            'react/jsx-uses-vars': 'error',
-        },
-        // ... others are omitted for brevity
     },
     {
         files: ['**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}'],
-        plugins: {
-            'jsx-a11y': jsxA11y,
-        },
+        ...jsxA11y.flatConfigs.recommended,
         languageOptions: {
-            parserOptions: {
-                ecmaFeatures: {
-                    jsx: true,
-                },
+            ...jsxA11y.flatConfigs.recommended.languageOptions,
+            globals: {
+                ...globals.serviceworker,
+                ...globals.browser,
             },
         },
-        rules: {
-            // ... any rules you want
-            'jsx-a11y/alt-text': 'error',
-        },
-        // ... others are omitted for brevity
     },
 ];
