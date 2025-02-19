@@ -9,6 +9,7 @@ export default [
         files: ['**/*.{js,jsx,mjs,cjs,ts,tsx}'],
         plugins: {
             react: reactPlugin,
+            'jsx-a11y': jsxA11y,
         },
         languageOptions: {
             parserOptions: {
@@ -23,7 +24,9 @@ export default [
     },
     {
         files: ['**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}'],
-        ...jsxA11y.flatConfigs.recommended,
+        rules: {
+            ...jsxA11y.flatConfigs.recommended.rules,
+        },
         languageOptions: {
             ...jsxA11y.flatConfigs.recommended.languageOptions,
             globals: {
