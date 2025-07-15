@@ -1,5 +1,13 @@
 # Changelog
 
+## [5.1.1](https://github.com/Evaneos/front-config/compare/v5.1.0...v5.1.1) (2025-07-15)
+
+
+### Bug Fixes
+
+* estlint message more explicit ([e464e5e](https://github.com/Evaneos/front-config/commit/e464e5e548ad349a955df472077d9788fa71af6f))
+* estlint message more explicit ([068e411](https://github.com/Evaneos/front-config/commit/068e4114b0c93c83d3e3cd15ec6f1379a7c3adb6))
+
 ## [5.1.0](https://github.com/Evaneos/front-config/compare/v5.0.0...v5.1.0) (2025-07-15)
 
 
