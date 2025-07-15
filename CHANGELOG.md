@@ -1,5 +1,15 @@
 # Changelog
 
+## [5.1.3](https://github.com/Evaneos/front-config/compare/v5.1.2...v5.1.3) (2025-07-15)
+
+
+### Bug Fixes
+
+* revert has nextjs ([cbd02aa](https://github.com/Evaneos/front-config/commit/cbd02aa4d3eaf992dd04ce7dd00de12177e2754b))
+* revert has nextjs ([ca0d4fc](https://github.com/Evaneos/front-config/commit/ca0d4fcd474a83b374cbe8ae86a33ff9711647c3))
+* view message in react intl rule ([4f26ae6](https://github.com/Evaneos/front-config/commit/4f26ae6d323870432c85427002b2074e5c64691f))
+* view message in react intl rule ([ea3fdac](https://github.com/Evaneos/front-config/commit/ea3fdacfe31dec2ada10d7fb69af1a940a93e0c9))
+
 ## [5.1.2](https://github.com/Evaneos/front-config/compare/v5.1.1...v5.1.2) (2025-07-15)
 
 
