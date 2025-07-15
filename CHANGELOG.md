@@ -1,5 +1,13 @@
 # Changelog
 
+## [5.1.2](https://github.com/Evaneos/front-config/compare/v5.1.1...v5.1.2) (2025-07-15)
+
+
+### Bug Fixes
+
+* check if nextjs is present in user project ([c7715e8](https://github.com/Evaneos/front-config/commit/c7715e89b80a7714399153ec5a5cc6ef6dbb5b2d))
+* check if nextjs is present in user project ([8711f2b](https://github.com/Evaneos/front-config/commit/8711f2b8adda5c4f18e1a6748d138e752065fa72))
+
 ## [5.1.1](https://github.com/Evaneos/front-config/compare/v5.1.0...v5.1.1) (2025-07-15)
 
 
