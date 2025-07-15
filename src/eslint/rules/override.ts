@@ -20,7 +20,7 @@ export default [
                         {
                             name: 'react-intl',
                             message:
-                                'Use next-intl instead of react-intl. Docs: https://next-intl-docs.vercel.app/ | ADR: https://www.notion.so/leather-yard-6b5/ADR-Next-intl-et-internationalisation-d-une-app-Next-17da97006602800bafd9cf4ebdfde508',
+                                'Use next-intl instead of react-intl.\nDocs: https://next-intl-docs.vercel.app/\nADR: https://www.notion.so/leather-yard-6b5/ADR-Next-intl-et-internationalisation-d-une-app-Next-17da97006602800bafd9cf4ebdfde508',
                         },
                     ],
                 },
