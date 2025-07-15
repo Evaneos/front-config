@@ -1,5 +1,13 @@
 # Changelog
 
+## [5.1.0](https://github.com/Evaneos/front-config/compare/v5.0.0...v5.1.0) (2025-07-15)
+
+
+### Features
+
+* add rule to restrict usage of react-intl in favor of next-intl ([2c14078](https://github.com/Evaneos/front-config/commit/2c140780c8f0ef0129a0cef38bb133582a54181c))
+* add rule to restrict usage of react-intl in favor of next-intl ([785e092](https://github.com/Evaneos/front-config/commit/785e092e6a7a0fb4f3de198e83d379fe69f93120))
+
 ## [5.0.0](https://github.com/Evaneos/front-config/compare/v1.2.0...v5.0.0) (2025-02-19)
 
 
