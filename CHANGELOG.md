@@ -1,5 +1,13 @@
 # Changelog
 
+## [5.1.4](https://github.com/Evaneos/front-config/compare/v5.1.3...v5.1.4) (2025-07-15)
+
+
+### Bug Fixes
+
+* update message format in react-intl rule to include ADR link ([60eef44](https://github.com/Evaneos/front-config/commit/60eef44ee36ed34fa38b569f4d8d01f7b89b0940))
+* update message format in react-intl rule to include ADR link ([97dd6aa](https://github.com/Evaneos/front-config/commit/97dd6aa7598acad4651901abcb489c74aeae0d73))
+
 ## [5.1.3](https://github.com/Evaneos/front-config/compare/v5.1.2...v5.1.3) (2025-07-15)
 
 
