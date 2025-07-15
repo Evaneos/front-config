@@ -1,3 +1,27 @@
+import { existsSync, readFileSync } from 'fs';
+import { join } from 'path';
+
+// Check if Next.js is present in the project
+function hasNextJs(): boolean {
+    try {
+        const packageJsonPath = join(process.cwd(), 'package.json');
+        if (!existsSync(packageJsonPath)) {
+            return false;
+        }
+
+        const packageJsonContent = readFileSync(packageJsonPath, 'utf8');
+        const packageJson = JSON.parse(packageJsonContent) as {
+            dependencies?: Record<string, string>;
+            devDependencies?: Record<string, string>;
+        };
+        const dependencies = { ...packageJson.dependencies, ...packageJson.devDependencies };
+
+        return 'next' in dependencies;
+    } catch {
+        return false;
+    }
+}
+
 export default [
     {
         rules: {
@@ -13,18 +37,22 @@ export default [
             'react/jsx-uses-vars': 'error',
             '@typescript-eslint/no-unsafe-member-access': 'off',
             '@typescript-eslint/no-unsafe-assignment': 'off',
-            'no-restricted-imports': [
-                'warn',
-                {
-                    paths: [
-                        {
-                            name: 'react-intl',
-                            message:
-                                'Use next-intl instead of react-intl. Docs: https://next-intl-docs.vercel.app/ | ADR: https://www.notion.so/leather-yard-6b5/ADR-Next-intl-et-internationalisation-d-une-app-Next-17da97006602800bafd9cf4ebdfde508',
-                        },
-                    ],
-                },
-            ],
+            ...(hasNextJs()
+                ? {
+                      'no-restricted-imports': [
+                          'warn',
+                          {
+                              paths: [
+                                  {
+                                      name: 'react-intl',
+                                      message:
+                                          'Use next-intl instead of react-intl. Docs: https://next-intl-docs.vercel.app/ | ADR: https://www.notion.so/leather-yard-6b5/ADR-Next-intl-et-internationalisation-d-une-app-Next-17da97006602800bafd9cf4ebdfde508',
+                                  },
+                              ],
+                          },
+                      ],
+                  }
+                : {}),
         },
     },
 ] as const;
