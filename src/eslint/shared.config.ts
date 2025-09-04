@@ -1,11 +1,10 @@
-import eslintConfigPrettier from 'eslint-config-prettier';
-
 import eslint from '@eslint/js';
+import eslintConfigPrettier from 'eslint-config-prettier';
 import tseslint from 'typescript-eslint';
 
+import evaneosOverrides from './rules/override';
 import reactLint from './rules/react';
 import testLint from './rules/test';
-import evaneosOverrides from './rules/override';
 
 export default tseslint.config(
     eslint.configs.recommended,
