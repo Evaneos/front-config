@@ -1,10 +1,11 @@
-import reactPlugin from 'eslint-plugin-react';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
+import reactPlugin from 'eslint-plugin-react';
 import globals from 'globals';
+import { Config } from 'typescript-eslint';
 
 export default [
-    reactPlugin.configs.flat?.recommended,
-    reactPlugin.configs.flat?.['jsx-runtime'],
+    ...(reactPlugin.configs.flat?.recommended ? [reactPlugin.configs.flat.recommended] : []),
+    ...(reactPlugin.configs.flat?.['jsx-runtime'] ? [reactPlugin.configs.flat['jsx-runtime']] : []),
     {
         files: ['**/*.{js,jsx,mjs,cjs,ts,tsx}'],
         plugins: {
@@ -35,4 +36,4 @@ export default [
             },
         },
     },
-];
+] satisfies Config;

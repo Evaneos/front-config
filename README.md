@@ -16,7 +16,7 @@ In your `eslint.config.(c|m)js` file, add:
 
 ```cjs
 const evaneosConfig = require('@evaneos/front-config/eslint/index.js');
-module.export = [...evaneosConfig];
+module.exports = [...evaneosConfig];
 ```
 
 ```mjs

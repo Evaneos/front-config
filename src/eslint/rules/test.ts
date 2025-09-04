@@ -1,5 +1,6 @@
 import testingLibrary from 'eslint-plugin-testing-library';
 import pluginJest from 'eslint-plugin-jest';
+import { Config } from 'typescript-eslint';
 
 export default [
     {
@@ -18,5 +19,5 @@ export default [
         languageOptions: {
             globals: pluginJest.environments.globals.globals,
         },
-    } as const,
-];
+    },
+] satisfies Config;

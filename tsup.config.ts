@@ -2,7 +2,7 @@ import { defineConfig } from 'tsup';
 
 export default defineConfig({
     entry: {
-        'eslint/index': 'src/eslint/eslint.config.ts',
+        'eslint/index': 'src/eslint/shared.config.ts',
     },
     format: ['esm', 'cjs'],
     splitting: false,
