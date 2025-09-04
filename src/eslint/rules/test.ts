@@ -1,5 +1,5 @@
-import testingLibrary from 'eslint-plugin-testing-library';
 import pluginJest from 'eslint-plugin-jest';
+import testingLibrary from 'eslint-plugin-testing-library';
 import { Config } from 'typescript-eslint';
 
 export default [

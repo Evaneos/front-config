@@ -1,4 +1,5 @@
 import globals from 'globals';
+
 import sharedConfig from './src/eslint/shared.config';
 
 export default [
@@ -30,6 +31,7 @@ export default [
         files: config.files || [
             'src/**/*.ts',
             'src/**/*.tsx',
+            'types/**/*.d.ts',
             '.prettierrc.js',
             'prettier/index.js',
             'tsup.config.ts',
