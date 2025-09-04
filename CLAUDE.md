@@ -30,14 +30,25 @@ No test suite is configured in this project.
 
 - Uses `tsup` to build TypeScript source into both ESM and CommonJS formats
 - Source files in `src/eslint/` are built to `eslint/` directory
-- Main entry point: `src/eslint/eslint.config.ts` → `eslint/index.js` + `eslint/index.mjs`
+- Main entry point: `src/eslint/shared.config.ts` → `eslint/index.js` + `eslint/index.mjs`
 
 ### ESLint Configuration Structure
 
-- `src/eslint/eslint.config.ts` - Main ESLint configuration combining all rules
+- `src/eslint/shared.config.ts` - Main ESLint configuration for export to other projects
+- `eslint.config.ts` - Root configuration specific to this repository (overrides `tsconfigRootDir`)
 - `src/eslint/rules/override.ts` - Evaneos-specific rule overrides (includes react-intl deprecation warning)
 - `src/eslint/rules/react.ts` - React-specific linting rules
 - `src/eslint/rules/test.ts` - Testing-specific linting rules
+
+### Local Development Configuration Files
+
+The following files at the repository root are **only for development of this repository** and are **not exported**:
+
+- `tsconfig.json` - TypeScript configuration for this repository (extends `./config/tsconfig.json`)
+- `eslint.config.ts` - ESLint configuration for linting this repository's code
+- `.prettierrc.js` - Prettier configuration for formatting this repository's code
+
+**Important**: When fixing TypeScript errors, ESLint issues, or other development problems in this repository, these are the configuration files to modify, not the exported configurations.
 
 ### Configuration Exports
 
@@ -46,6 +57,14 @@ No test suite is configured in this project.
 - Prettier: Exports config from `prettier/index.js`
 
 ## Important Notes
+
+### Dual ESLint Configuration
+
+This repository uses a unique dual configuration approach:
+- `src/eslint/shared.config.ts` - Clean config exported as a library using `process.cwd()`
+- `eslint.config.ts` - Repository-specific config that imports shared config but overrides `tsconfigRootDir: './'`
+
+This solves the issue where ESLint treats the shared config as the primary config for this repository.
 
 ### Commit Standards
 
