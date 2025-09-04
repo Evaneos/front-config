@@ -48,6 +48,19 @@ export default [
                     ],
                 },
             ],
+            'padding-line-between-statements': [
+                'error',
+                {
+                    blankLine: 'always', // Ligne vide obligatoire après directive
+                    prev: 'directive',
+                    next: '*',
+                },
+                {
+                    blankLine: 'never', // Interdire ligne vide entre directives
+                    prev: 'directive',
+                    next: 'directive',
+                },
+            ],
         },
     },
 ] satisfies Config;
