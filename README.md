@@ -105,6 +105,18 @@ module.exports = {
 };
 ```
 
+# Development
+
+## Local Development Files
+
+The following files at the repository root are **only for development experience within this repository** and are **not exported** as part of the package:
+
+- `tsconfig.json` - TypeScript configuration for developing this package
+- `eslint.config.ts` - ESLint configuration for linting this repository's source code
+- `.prettierrc.js` - Prettier configuration for formatting this repository's code
+
+These files are not included in the published package and should not be used as examples for consuming projects.
+
 # Contribution
 
 Contributing to this repo should be simple.
