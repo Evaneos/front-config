@@ -1,16 +1,39 @@
 import globals from 'globals';
-import evaneosEslintConfig from './src/eslint/eslint.config';
+import sharedConfig from './src/eslint/shared.config';
+
 export default [
     {
-        ignores: ['./node_modules/**/*', 'eslint/*', './*.cjs'],
+        ignores: ['node_modules/**/*', 'eslint/**/*', 'prettier/**/*'],
     },
     {
+        files: [
+            'src/**/*.ts',
+            'src/**/*.tsx',
+            '.prettierrc.js',
+            'prettier/index.js',
+            'tsup.config.ts',
+            'eslint.config.ts',
+        ],
         languageOptions: {
             sourceType: 'commonjs',
             globals: {
                 ...globals.node,
             },
+            parserOptions: {
+                projectService: true,
+                tsconfigRootDir: './', // Override spécifique à ce repo
+            },
         },
     },
-    ...evaneosEslintConfig,
+    ...sharedConfig.map((config) => ({
+        ...config,
+        files: config.files || [
+            'src/**/*.ts',
+            'src/**/*.tsx',
+            '.prettierrc.js',
+            'prettier/index.js',
+            'tsup.config.ts',
+            'eslint.config.ts',
+        ],
+    })),
 ];

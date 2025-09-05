@@ -1,14 +1,16 @@
+import type { Config } from 'typescript-eslint';
+
 export default [
     {
         rules: {
-            'no-process-env': 0,
-            'prefer-const': 1,
-            'prefer-destructuring': 1,
-            'prefer-spread': 1,
-            'arrow-body-style': 0,
-            'react/display-name': 0,
-            'react/prop-types': 0,
-            'react/react-in-jsx-scope': 0,
+            'no-process-env': 'off',
+            'prefer-const': 'warn',
+            'prefer-destructuring': 'warn',
+            'prefer-spread': 'warn',
+            'arrow-body-style': 'off',
+            'react/display-name': 'off',
+            'react/prop-types': 'off',
+            'react/react-in-jsx-scope': 'off',
             'react/jsx-uses-react': 'error',
             'react/jsx-uses-vars': 'error',
             '@typescript-eslint/no-unsafe-member-access': 'off',
@@ -27,4 +29,4 @@ export default [
             ],
         },
     },
-] as const;
+] satisfies Config;

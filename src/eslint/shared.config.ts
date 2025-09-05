@@ -25,6 +25,5 @@ export default tseslint.config(
     eslintConfigPrettier,
     ...testLint,
     ...reactLint,
-    // custom evaneos rules
     ...evaneosOverrides,
 );
