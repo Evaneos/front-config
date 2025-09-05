@@ -1,5 +1,13 @@
 # Changelog
 
+## [5.2.0](https://github.com/Evaneos/front-config/compare/v5.1.4...v5.2.0) (2025-09-05)
+
+
+### Features
+
+* add directive formatting rules for JavaScript/TypeScript directives ([155d0dd](https://github.com/Evaneos/front-config/commit/155d0dd5af96974488a8678fa85b2d55b8ebddd9))
+* **eslint:** add import plugin with order rule and include type definitions ([fe843f6](https://github.com/Evaneos/front-config/commit/fe843f6b10a37f5a1b1106d20fb4be0747a6c86f))
+
 ## [5.1.4](https://github.com/Evaneos/front-config/compare/v5.1.3...v5.1.4) (2025-07-15)
 
 
