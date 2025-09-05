@@ -1,5 +1,13 @@
 # Changelog
 
+## [5.3.0](https://github.com/Evaneos/front-config/compare/v5.2.0...v5.3.0) (2025-09-05)
+
+
+### Features
+
+* add dom.iterable lib in TS compiler options ([8ae84a1](https://github.com/Evaneos/front-config/commit/8ae84a1510197245aaa65137f9a54bddbcca33bd))
+* add dom.iterable lib in TS compiler options ([c24ea03](https://github.com/Evaneos/front-config/commit/c24ea03d8c1715ab4549675184aa36e707096683))
+
 ## [5.2.0](https://github.com/Evaneos/front-config/compare/v5.1.4...v5.2.0) (2025-09-05)
 
 
