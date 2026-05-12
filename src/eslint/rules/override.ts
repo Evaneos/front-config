@@ -1,4 +1,5 @@
 import importPlugin from 'eslint-plugin-import';
+
 import type { Config } from 'typescript-eslint';
 
 export default [
@@ -45,7 +46,27 @@ export default [
                             group: 'parent',
                             position: 'before',
                         },
+                        {
+                            pattern: './*.{css,scss,sass,less}',
+                            group: 'object',
+                        },
+                        {
+                            pattern: '**/*.{css,scss,sass,less}',
+                            group: 'object',
+                        },
                     ],
+                    groups: [
+                        'builtin',
+                        'external',
+                        'internal',
+                        'unknown',
+                        'parent',
+                        'sibling',
+                        'index',
+                        'object',
+                        'type',
+                    ],
+                    warnOnUnassignedImports: true,
                 },
             ],
             'padding-line-between-statements': [
