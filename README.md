@@ -124,3 +124,9 @@ Contributing to this repo should be simple.
 If you want to add a rule, plugin or anything, make a simple PR that does it, get it reviewed, merge it and then a release PR will automatically appear few minutes after.
 Make sure you follow standard commit.
 Merge it and it will automatically build and publish.
+
+## Supply chain protection
+
+This repo pins npm installs to packages published before a fixed date via the `before` directive in `.npmrc`, as a mitigation against npm supply chain attacks (ref INC-227).
+
+**If you need to upgrade dependencies**, update the `before` date in `.npmrc` to a value at most today minus 7 days. This 7-day delay leaves time for the community and automated scanners to detect and unpublish compromised packages before they reach our install.
