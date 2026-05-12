@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.4.0](https://github.com/Evaneos/front-config/compare/v5.3.0...v5.4.0) (2026-05-12)
+
+
+### Features
+
+* **eslint:** enforce CSS/SCSS imports placement in import/order ([0d10364](https://github.com/Evaneos/front-config/commit/0d103646a2fb19ade32b3e04751c10dfa00834ee))
+
 ## [5.3.0](https://github.com/Evaneos/front-config/compare/v5.2.0...v5.3.0) (2025-09-05)
 
 
