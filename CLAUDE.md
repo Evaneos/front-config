@@ -22,7 +22,9 @@ This is `@evaneos/front-config`, a shared configuration package for JavaScript/T
 
 ### Testing
 
-No test suite is configured in this project.
+- `npm test` - Build + run tests
+
+Fixture-based tests live under `tests/eslint/` — see the header of `tests/eslint/import-order.test.mjs` for the convention. Run them before touching `src/eslint/rules/*.ts`; CI does the same on every PR.
 
 ## Architecture
 

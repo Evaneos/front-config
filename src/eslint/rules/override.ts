@@ -47,11 +47,15 @@ export default [
                             position: 'before',
                         },
                         {
-                            pattern: './*.{css,scss,sass,less}',
-                            group: 'object',
-                        },
-                        {
-                            pattern: '**/*.{css,scss,sass,less}',
+                            // matchBase: minimatch's `**/*.{ext}` glob fails to match relative
+                            // paths starting with `..` (minimatch treats `..` as a parent-dir
+                            // reference, not a path segment). matchBase ignores directories and
+                            // matches against the basename, so it catches every `*.css/scss/sass/less`
+                            // regardless of path depth (`./`, `../`, `../../`, bare modules, aliases).
+                            // nocomment is kept to preserve eslint-plugin-import's default behavior
+                            // (patternOptions completely replaces the default `{ nocomment: true }`).
+                            pattern: '*.{css,scss,sass,less}',
+                            patternOptions: { matchBase: true, nocomment: true },
                             group: 'object',
                         },
                     ],
@@ -63,8 +67,8 @@ export default [
                         'parent',
                         'sibling',
                         'index',
-                        'object',
                         'type',
+                        'object',
                     ],
                     warnOnUnassignedImports: true,
                 },

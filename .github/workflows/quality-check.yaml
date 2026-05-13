@@ -7,7 +7,7 @@ on:
 
 jobs:
     quality-check:
-        name: Run Lint and Prettier
+        name: Run Lint, Prettier and Tests
         runs-on: ubuntu-latest
         steps:
             - name: Checkout code
@@ -26,3 +26,6 @@ jobs:
 
             - name: Run Prettier
               run: npm run prettier:check
+
+            - name: Run Tests
+              run: npm test

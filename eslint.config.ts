@@ -4,7 +4,12 @@ import sharedConfig from './src/eslint/shared.config';
 
 export default [
     {
-        ignores: ['node_modules/**/*', 'eslint/**/*', 'prettier/**/*'],
+        ignores: [
+            'node_modules/**/*',
+            'eslint/**/*',
+            'prettier/**/*',
+            'tests/eslint/fixtures/**/*',
+        ],
     },
     {
         files: [
