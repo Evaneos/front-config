@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.4.1](https://github.com/Evaneos/front-config/compare/v5.4.0...v5.4.1) (2026-05-13)
+
+
+### Miscellaneous Chores
+
+* trigger release-please + document id-token permission ([f62e857](https://github.com/Evaneos/front-config/commit/f62e857f769c93820a5a795f472b11890db8434f))
+
 ## [5.4.0](https://github.com/Evaneos/front-config/compare/v5.3.0...v5.4.0) (2026-05-12)
 
 
