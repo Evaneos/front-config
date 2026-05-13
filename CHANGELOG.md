@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.4.3](https://github.com/Evaneos/front-config/compare/v5.4.2...v5.4.3) (2026-05-13)
+
+
+### Bug Fixes
+
+* **eslint:** match deep-relative css imports via matchBase pathGroup ([#99](https://github.com/Evaneos/front-config/issues/99)) ([369833c](https://github.com/Evaneos/front-config/commit/369833c936e218e30278d70577964108e8320ade))
+
 ## [5.4.2](https://github.com/Evaneos/front-config/compare/v5.4.1...v5.4.2) (2026-05-13)
 
 
