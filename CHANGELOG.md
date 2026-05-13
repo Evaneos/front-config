@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.4.2](https://github.com/Evaneos/front-config/compare/v5.4.1...v5.4.2) (2026-05-13)
+
+
+### Bug Fixes
+
+* add repository url required for npm provenance ([6611f44](https://github.com/Evaneos/front-config/commit/6611f44d3c3252a5b278c6f59b2e355f934f556a))
+
 ## [5.4.1](https://github.com/Evaneos/front-config/compare/v5.4.0...v5.4.1) (2026-05-13)
 
 

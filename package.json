@@ -1,6 +1,6 @@
 {
     "name": "@evaneos/front-config",
-    "version": "5.4.1",
+    "version": "5.4.2",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/Evaneos/front-config.git"
