@@ -3,9 +3,10 @@
 // Layout:
 //   tests/eslint/fixtures/<category>/<scenario>.<type>.tsx
 //
-// The category subfolder groups tests by intent (currently only
-// `import-order/`; add a sibling category if you start testing another
-// rule). Within a category, the file suffix determines the test type:
+// The category subfolder groups tests by intent, and each runner reads
+// only its own category — this one reads `import-order/`; add a sibling
+// category if you start testing another rule. Within a category, the file
+// suffix determines the test type:
 //
 //   - <name>.valid.tsx              → "this code is already lint-clean".
 //                                     Asserts 0 import/order warnings AND
@@ -44,7 +45,7 @@ import tseslint from 'typescript-eslint';
 
 import sharedConfig from '../../eslint/index.mjs';
 
-const FIXTURES_DIR = join(dirname(fileURLToPath(import.meta.url)), 'fixtures');
+const FIXTURES_DIR = join(dirname(fileURLToPath(import.meta.url)), 'fixtures', 'import-order');
 
 const importOrderConfigBlock = sharedConfig.find(
     (block) => block?.rules && block.rules['import/order'],
