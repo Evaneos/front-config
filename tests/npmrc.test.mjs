@@ -18,6 +18,7 @@
 
 import assert from 'node:assert/strict';
 import { spawnSync } from 'node:child_process';
+import { readFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import test from 'node:test';
 import { fileURLToPath } from 'node:url';
@@ -63,6 +64,16 @@ const honoursMinReleaseAge = (version) => {
 
     return major > 11 || (major === 11 && minor >= 10);
 };
+
+test('npm aborts the install when it is too old to honour the cooldown', () => {
+    assert.equal(npmConfigGet('engine-strict'), 'true');
+
+    const { engines } = JSON.parse(readFileSync(join(repoRoot, 'package.json'), 'utf8'));
+    const [, floor] = /^>=\s*(\d+\.\d+\.\d+)$/.exec(engines.npm) ?? [];
+
+    assert.ok(floor !== undefined, `engines.npm must declare a minimum version, got ${engines.npm}`);
+    assert.ok(honoursMinReleaseAge(floor), `engines.npm allows npm ${floor}, which ignores min-release-age`);
+});
 
 test('npm refuses releases published in the last 7 days, counted from now', () => {
     const version = npmVersion();

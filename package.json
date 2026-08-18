@@ -7,7 +7,7 @@
     },
     "engines": {
         "node": ">=v18",
-        "npm": ">=9"
+        "npm": ">=11.10.0"
     },
     "files": [
         "eslint/*",
@@ -16,7 +16,7 @@
         "README.md"
     ],
     "scripts": {
-        "prepare": "husky && node ./scripts/check-npm-version.mjs",
+        "prepare": "husky",
         "build": "tsup",
         "lint:check": "eslint -c ./eslint.config.ts",
         "lint:fix": "eslint -c ./eslint.config.ts --fix",
