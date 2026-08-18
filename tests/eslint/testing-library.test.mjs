@@ -89,10 +89,12 @@ for (const fixture of fixtures) {
             const errors = await testingLibraryErrorsFor(fixture, filePath);
 
             assert.ok(
-                errors.some((m) => m.ruleId === fixture.expectedRuleId),
+                errors.some((m) => m.ruleId === fixture.expectedRuleId && m.severity === 2),
                 `${filePath} must be covered by the testing-library preset and report ${
                     fixture.expectedRuleId
-                }. Reported: ${JSON.stringify(errors.map((m) => m.ruleId))}`,
+                } as an error (severity 2). Reported: ${JSON.stringify(
+                    errors.map((m) => ({ ruleId: m.ruleId, severity: m.severity })),
+                )}`,
             );
         });
     }
