@@ -36,37 +36,17 @@ Fixture-based tests live under `tests/eslint/` — see the header of `tests/esli
 
 ### ESLint Configuration Structure
 
-- `src/eslint/shared.config.ts` - Main ESLint configuration for export to other projects
-- `eslint.config.ts` - Root configuration specific to this repository (overrides `tsconfigRootDir`)
+- `src/eslint/shared.config.ts` - Main ESLint configuration for export to other projects; resolves types via `process.cwd()`
+- `eslint.config.ts` - Root configuration for this repository: imports the shared config but overrides `tsconfigRootDir: './'`. Both are needed — without the override, ESLint treats the shared config as this repository's own primary config
 - `src/eslint/rules/override.ts` - Evaneos-specific rule overrides (includes react-intl deprecation warning)
 - `src/eslint/rules/react.ts` - React-specific linting rules
 - `src/eslint/rules/test.ts` - Testing-specific linting rules
 
 ### Local Development Configuration Files
 
-The following files at the repository root are **only for development of this repository** and are **not exported**:
-
-- `tsconfig.json` - TypeScript configuration for this repository (extends `./config/tsconfig.json`)
-- `eslint.config.ts` - ESLint configuration for linting this repository's code
-- `.prettierrc.js` - Prettier configuration for formatting this repository's code
-
-**Important**: When fixing TypeScript errors, ESLint issues, or other development problems in this repository, these are the configuration files to modify, not the exported configurations.
-
-### Configuration Exports
-
-- ESLint: Exports flat config array from `eslint/index.js|mjs`
-- TypeScript: Exports base config from `config/tsconfig.json`
-- Prettier: Exports config from `prettier/index.js`
+`tsconfig.json`, `eslint.config.ts` and `.prettierrc.js` at the root configure **this repository only** and are not exported. When fixing a TypeScript error, an ESLint issue or any other development problem here, modify those — never the exported configurations.
 
 ## Important Notes
-
-### Dual ESLint Configuration
-
-This repository uses a unique dual configuration approach:
-- `src/eslint/shared.config.ts` - Clean config exported as a library using `process.cwd()`
-- `eslint.config.ts` - Repository-specific config that imports shared config but overrides `tsconfigRootDir: './'`
-
-This solves the issue where ESLint treats the shared config as the primary config for this repository.
 
 ### Commit Standards
 
@@ -77,7 +57,7 @@ This solves the issue where ESLint treats the shared config as the primary confi
 ### Custom Rules
 
 - Warns against using `react-intl` (deprecated in favor of `next-intl`)
-- Disables strict TypeScript safety rules for easier migration
+- Turns off exactly two type-safety rules — `@typescript-eslint/no-unsafe-member-access` and `no-unsafe-assignment`; `recommendedTypeChecked` and `strict` stay on
 - React components don't require explicit React import (JSX transform)
 
 ### Release Process
