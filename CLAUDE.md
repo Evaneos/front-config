@@ -72,7 +72,7 @@ This solves the issue where ESLint treats the shared config as the primary confi
 
 - Uses conventional commits with custom types defined in `commitlint.config.cjs`
 - Supported types: feat, fix, docs, chore, style, refactor, ci, test, revert, fix!, feat!, other
-- Commit messages are validated in French
+- Commit messages are written in English; the French failure messages come from `commitlint.config.cjs`'s own `function-rules`, and say nothing about the language a commit should be written in
 
 ### Custom Rules
 
@@ -82,5 +82,7 @@ This solves the issue where ESLint treats the shared config as the primary confi
 
 ### Release Process
 
-- Automated release PRs are created after merging changes
-- Uses semantic versioning and conventional commits for release automation
+- Merging to `main` runs release-please, which opens a release PR; merging **that** PR is what publishes to npm
+- `feat` cuts a minor, `fix` a patch, `feat!`/`fix!` a major. No other type is user facing on its own: release-please skips them, logging `No user facing commits found ... - skipping`, and nothing reaches npm
+- A `Release-As: X.Y.Z` footer forces a release whatever the type — that is how 5.4.1 shipped a `ci:`-only change
+- Which commits release-please reads depends on how the PR is merged, and this repo allows all three strategies: a squash merge collapses the branch into the PR **title**, so that title's type is the only one that counts; a merge commit keeps the individual types
