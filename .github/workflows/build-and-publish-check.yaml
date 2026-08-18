@@ -23,5 +23,5 @@ jobs:
             - name: Build library
               run: npm run build
 
-            - name: Publish dry run
-              run: npm publish --dry-run
+            - name: Package dry run
+              run: npm pack --dry-run
