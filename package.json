@@ -16,7 +16,7 @@
         "README.md"
     ],
     "scripts": {
-        "prepare": "husky",
+        "prepare": "husky && node ./scripts/check-npm-version.mjs",
         "build": "tsup",
         "lint:check": "eslint -c ./eslint.config.ts",
         "lint:fix": "eslint -c ./eslint.config.ts --fix",

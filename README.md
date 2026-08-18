@@ -127,6 +127,8 @@ Merge it and it will automatically build and publish.
 
 ## Supply chain protection
 
-This repo pins npm installs to packages published before a fixed date via the `before` directive in `.npmrc`, as a mitigation against npm supply chain attacks (ref INC-227).
+This repo refuses to install packages published in the last 7 days, via the `min-release-age` directive in `.npmrc`, as a mitigation against npm supply chain attacks (ref INC-227). This delay leaves time for the community and automated scanners to detect and unpublish compromised packages before they reach our install.
 
-**If you need to upgrade dependencies**, update the `before` date in `.npmrc` to a value at most today minus 7 days. This 7-day delay leaves time for the community and automated scanners to detect and unpublish compromised packages before they reach our install.
+The delay is relative to the day you install, so it never expires and needs no maintenance — including when you upgrade dependencies.
+
+`min-release-age` requires **npm >= 11.10.0**; older versions ignore it silently, which would drop the protection unnoticed. Running `npm install` in this repo therefore fails with an upgrade command if your npm is too old (see `scripts/check-npm-version.mjs`, run by the `prepare` script). This applies to contributors only: the guard is not part of the published package and never runs for projects consuming it.
