@@ -14,9 +14,12 @@
 //       the rule the fixture violates: `await-async-queries.violation.tsx`
 //       must be reported by `testing-library/await-async-queries`.
 //
-// Every fixture found in that folder is crossed with every path of the
+// The folder is scanned recursively, so fixtures may also live in
+// subfolders (the rule id is still derived from the file's basename).
+//
+// Every fixture found under that folder is crossed with every path of the
 // in-scope and out-of-scope matrices below, so adding a case = dropping a
-// file in the folder. No code change to this runner.
+// file in the folder (or a subfolder). No code change to this runner.
 //
 // The tests read the *built* config (`eslint/index.mjs`), i.e. what consumers
 // actually install, and isolate the block carrying the testing-library plugin
@@ -24,7 +27,7 @@
 
 import assert from 'node:assert/strict';
 import { readFileSync, readdirSync } from 'node:fs';
-import { dirname, join } from 'node:path';
+import { basename, dirname, join } from 'node:path';
 import test from 'node:test';
 import { fileURLToPath } from 'node:url';
 
@@ -56,13 +59,27 @@ const eslint = new ESLint({
 
 const VIOLATION_SUFFIX = '.violation.tsx';
 
-const fixtures = readdirSync(FIXTURES_DIR)
-    .filter((name) => name.endsWith(VIOLATION_SUFFIX))
-    .map((name) => ({
+function listViolationFiles(rootDir) {
+    const result = [];
+    function walk(dir) {
+        for (const entry of readdirSync(dir, { withFileTypes: true })) {
+            const full = join(dir, entry.name);
+            if (entry.isDirectory()) walk(full);
+            else if (entry.isFile() && entry.name.endsWith(VIOLATION_SUFFIX)) result.push(full);
+        }
+    }
+    walk(rootDir);
+    return result;
+}
+
+const fixtures = listViolationFiles(FIXTURES_DIR).map((path) => {
+    const name = basename(path);
+    return {
         name,
         expectedRuleId: `testing-library/${name.slice(0, -VIOLATION_SUFFIX.length)}`,
-        code: readFileSync(join(FIXTURES_DIR, name), 'utf8'),
-    }));
+        code: readFileSync(path, 'utf8'),
+    };
+});
 
 if (fixtures.length === 0) {
     throw new Error(
@@ -77,6 +94,7 @@ async function testingLibraryErrorsFor(fixture, filePath) {
 
 const IN_SCOPE_PATHS = [
     'src/__tests__/greeting.tsx',
+    'src/__tests__/greeting.ts',
     'src/__tests__/nested/greeting.tsx',
     'src/greeting.spec.ts',
     'src/greeting.spec.tsx',

@@ -100,6 +100,12 @@ const validFiles = allFiles.filter((p) => p.endsWith('.valid.tsx'));
 const beforeFiles = allFiles.filter((p) => p.endsWith('.before.tsx'));
 const afterFiles = new Set(allFiles.filter((p) => p.endsWith('.after.tsx')));
 
+if (validFiles.length === 0 && beforeFiles.length === 0 && afterFiles.size === 0) {
+    throw new Error(
+        `No *.valid.tsx, *.before.tsx nor *.after.tsx fixture found in ${FIXTURES_DIR}. This suite would silently test nothing.`,
+    );
+}
+
 for (const validFile of validFiles) {
     const id = relative(FIXTURES_DIR, validFile).replace(/\.valid\.tsx$/, '');
     test(`fixture: ${id} — already lint-clean (autofix is a no-op)`, async () => {
