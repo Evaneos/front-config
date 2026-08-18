@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.4.4](https://github.com/Evaneos/front-config/compare/v5.4.3...v5.4.4) (2026-08-18)
+
+
+### Bug Fixes
+
+* **deps:** release the eslint-plugin-testing-library v7 bump ([#102](https://github.com/Evaneos/front-config/issues/102)) ([281478f](https://github.com/Evaneos/front-config/commit/281478f9ea7bdd7763713d12aa1a7942afb1e2f2))
+
 ## [5.4.3](https://github.com/Evaneos/front-config/compare/v5.4.2...v5.4.3) (2026-05-13)
 
 
