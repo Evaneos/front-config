@@ -78,9 +78,12 @@ async function testingLibraryErrorsFor(fixture, filePath) {
 const IN_SCOPE_PATHS = [
     'src/__tests__/greeting.tsx',
     'src/__tests__/nested/greeting.tsx',
+    'src/greeting.spec.ts',
     'src/greeting.spec.tsx',
-    'src/greeting.test.tsx',
+    'src/greeting.test.js',
+    'src/greeting.test.jsx',
     'src/greeting.test.ts',
+    'src/greeting.test.tsx',
 ];
 
 for (const fixture of fixtures) {
