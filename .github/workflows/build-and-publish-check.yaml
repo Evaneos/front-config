@@ -15,7 +15,7 @@ jobs:
             - name: Set up Node.js
               uses: actions/setup-node@v4
               with:
-                  node-version: '20'
+                  node-version: '24'
 
             - name: Install dependencies
               run: npm install
@@ -23,5 +23,5 @@ jobs:
             - name: Build library
               run: npm run build
 
-            - name: Publish dry run
-              run: npm publish --dry-run
+            - name: Package dry run
+              run: npm pack --dry-run

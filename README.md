@@ -127,6 +127,10 @@ Merge it and it will automatically build and publish.
 
 ## Supply chain protection
 
-This repo pins npm installs to packages published before a fixed date via the `before` directive in `.npmrc`, as a mitigation against npm supply chain attacks (ref INC-227).
+This repo refuses to install packages published in the last 7 days, via the `min-release-age` directive in `.npmrc`, as a mitigation against npm supply chain attacks (ref INC-227). This delay leaves time for the community and automated scanners to detect and unpublish compromised packages before they reach our install.
 
-**If you need to upgrade dependencies**, update the `before` date in `.npmrc` to a value at most today minus 7 days. This 7-day delay leaves time for the community and automated scanners to detect and unpublish compromised packages before they reach our install.
+The delay is relative to the day you install, so it never expires and needs no maintenance — including when you upgrade dependencies.
+
+`min-release-age` requires **npm >= 11.10.0**; older versions only warn that the directive is unknown and install without any cooldown, dropping the protection. To make that impossible, `.npmrc` also sets `engine-strict=true` while `package.json` declares `engines.npm: ">=11.10.0"`: an install driven by an older npm is aborted with `EBADENGINE` before a single dependency is unpacked, so no lifecycle script of a too-fresh package ever runs. Upgrade with `npm i -g npm@latest`.
+
+For projects consuming the published package, `engines.npm` only produces an `EBADENGINE` **warning**, never a blocked install: `engine-strict` lives in `.npmrc`, which is not published.
