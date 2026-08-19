@@ -133,4 +133,8 @@ The delay is relative to the day you install, so it never expires and needs no m
 
 `min-release-age` requires **npm >= 11.10.0**; older versions only warn that the directive is unknown and install without any cooldown, dropping the protection. To make that impossible, `.npmrc` also sets `engine-strict=true` while `package.json` declares `engines.npm: ">=11.10.0"`: an install driven by an older npm is aborted with `EBADENGINE` before a single dependency is unpacked, so no lifecycle script of a too-fresh package ever runs. Upgrade with `npm i -g npm@latest`.
 
+The cooldown delays a compromised package's arrival; it does nothing about the moment it arrives anyway. That second front is closed by `ignore-scripts=true`, which stops npm from running the `preinstall`, `install` and `postinstall` hooks a dependency ships — the very hooks a poisoned package relies on to execute anything at all. No script of this repo can substitute for it: npm runs every dependency hook before the first root script, so anything written here would only witness a fait accompli.
+
+The one consequence for developers is that `prepare: husky` no longer runs either, so a fresh clone starts without the local `commit-msg` hook and a malformed commit message is no longer refused at `git commit` time. It is still caught on every pull request, where CI runs commitlint. If you want the hook back locally, run `npx husky` once in your clone.
+
 For projects consuming the published package, `engines.npm` only produces an `EBADENGINE` **warning**, never a blocked install: `engine-strict` lives in `.npmrc`, which is not published.

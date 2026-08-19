@@ -15,6 +15,11 @@
 //     checked against the clock: a relative policy resolves to "now minus 7
 //     days" on every run, a frozen date sits at a fixed UTC midnight and drifts
 //     away as days pass.
+//
+// `ignore-scripts` carries neither caveat: it is a long-standing npm option
+// that was never renamed nor reshaped across versions, and its effect was
+// confirmed behaviourally (with it on, `npm install` no longer generates
+// `.husky/_`, proof that no lifecycle script ran). Asking npm for it is enough.
 
 import assert from 'node:assert/strict';
 import { spawnSync } from 'node:child_process';
@@ -73,6 +78,10 @@ test('npm aborts the install when it is too old to honour the cooldown', () => {
 
     assert.ok(floor !== undefined, `engines.npm must declare a minimum version, got ${engines.npm}`);
     assert.ok(honoursMinReleaseAge(floor), `engines.npm allows npm ${floor}, which ignores min-release-age`);
+});
+
+test('npm runs no dependency lifecycle script on install', () => {
+    assert.equal(npmConfigGet('ignore-scripts'), 'true');
 });
 
 test('npm refuses releases published in the last 7 days, counted from now', () => {
