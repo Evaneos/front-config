@@ -27,7 +27,7 @@
 //   pair plus a leading comment block in the file explaining the
 //   limitation. See that folder's README.md for the index. The fixtures
 //   double as regression alarms: if a future bump of
-//   `eslint-plugin-import` removes a limitation, the matching test fails.
+//   `eslint-plugin-import-x` removes a limitation, the matching test fails.
 //
 // - Comments at the top of `.before.tsx` survive autofix unchanged, so
 //   they end up identical in `.after.tsx`. Use them to explain the case
@@ -40,7 +40,7 @@ import test from 'node:test';
 import { fileURLToPath } from 'node:url';
 
 import { ESLint } from 'eslint';
-import importPlugin from 'eslint-plugin-import';
+import importPlugin from 'eslint-plugin-import-x';
 import tseslint from 'typescript-eslint';
 
 import sharedConfig from '../../eslint/index.mjs';
