@@ -85,6 +85,32 @@ You may want to lint some files differently, for example if its node or browser 
     },
 ```
 
+## ESLint 9 or 10
+
+This package supports both. `import/order` is now backed by
+[`eslint-plugin-import-x`](https://github.com/un-ts/eslint-plugin-import-x), the maintained fork —
+`eslint-plugin-import` never shipped an ESLint 10 compatible release and crashes on `import/order`
+under it. The plugin stays registered under the `import` key, so **rule ids do not change**: your
+`import/order` overrides and your `// eslint-disable-next-line import/order` comments keep working
+untouched.
+
+One caveat if you move to ESLint 10: `eslint-plugin-react` and `eslint-plugin-jsx-a11y` still cap
+their `eslint` peer at `^9`. They run fine under 10 — only npm's dependency resolution refuses the
+install. Until they widen their range, add this to your app's `package.json`:
+
+```json
+"overrides": {
+    "eslint-plugin-react": { "eslint": "$eslint" },
+    "eslint-plugin-jsx-a11y": { "eslint": "$eslint" }
+}
+```
+
+Remove it once both plugins declare `^10`.
+
+If you set your own `settings['import/...']` — a resolver, `extensions`, `parsers` — rename the key
+to `settings['import-x/...']`. `eslint-plugin-import-x` reads its settings from its own namespace,
+whatever key the plugin is registered under. This package sets no `import/*` settings itself.
+
 ## TSConfig
 
 In your `tsconfig.json` file, add:
