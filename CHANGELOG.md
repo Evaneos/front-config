@@ -1,5 +1,13 @@
 # Changelog
 
+## [5.5.0](https://github.com/Evaneos/front-config/compare/v5.4.4...v5.5.0) (2026-09-01)
+
+
+### Features
+
+* **eslint-config:** support ESLint 10 alongside 9 ([e876ab2](https://github.com/Evaneos/front-config/commit/e876ab23bd0f4d389407540aff6134e1e10b5165))
+* **eslint-config:** support ESLint 10 alongside 9 ([8954066](https://github.com/Evaneos/front-config/commit/8954066ef87a1cbea640b84421f04cc975615cc9))
+
 ## [5.4.4](https://github.com/Evaneos/front-config/compare/v5.4.3...v5.4.4) (2026-08-18)
 
 
